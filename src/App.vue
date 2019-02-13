@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>Listing page with lazy loading</h1>
     <ListView v-bind:data="data_all"/>
   </div>
 </template>
@@ -20,9 +21,6 @@ export default {
           name: "Beautiful Golf Course View Villa.Rainbow Inn Aiea.",
           img:
             "https://odis.homeaway.com/odis/listing/f548e387-7057-44f6-82ca-cbb567c0472b.c10.jpg"
-
-          // "https://odis.homeaway.com/odis/listing/821e8093-8094-425b-9386-c36b940f9611.c10.jpg"
-          // "https://odis.homeaway.com/odis/listing/661db966-569e-4cb4-8ea7-46eff97af432.c10.jpg"
         },
         {
           id: 2,
@@ -30,7 +28,6 @@ export default {
             "Private, Romantic Cottage On An Estate Property In The Hamakua District",
           img:
             "https://odis.homeaway.com/odis/listing/93623172-1288-475b-bc63-57c36c919d86.c10.jpg"
-          // "https://odis.homeaway.com/odis/listing/f548e387-7057-44f6-82ca-cbb567c0472b.c10.jpg"
         },
         {
           id: 3,
@@ -98,8 +95,6 @@ export default {
 <style>
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
