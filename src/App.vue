@@ -1,4 +1,4 @@
-<template>
+<template >
   <div id="app">
     <h1>Listing page with lazy loading</h1>
     <ListView v-bind:data="data_all"/>

@@ -3,14 +3,8 @@
     <div id="props" class="row">
       <div v-bind:key="item.id" v-for="item in data" class="col-xs-4 col-lg-4 box">
         <div class="thumbnail">
-          <img class="img-resize" :src="item.img" alt="Image">
+          <v-lazy-image class="img-resize" :src="item.img"/>
 
-          <!-- <img
-            class="lazy"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2F4bO2dX3Tf4FqbCdLu4dmGO4TgcpWQJuEoFKQ_N5H75Lv8Hv"
-            :data-src="item.img"
-            alt="Image"
-          >-->
           <div class="text-box">
             <h3 class="title">{{item.name}}</h3>
           </div>
@@ -21,9 +15,14 @@
 </template>
 
 <script>
+import VLazyImage from "v-lazy-image";
+
 export default {
   name: "ListView",
-  props: ["data"]
+  props: ["data"],
+  components: {
+    VLazyImage
+  }
 };
 </script>
 
@@ -33,7 +32,7 @@ export default {
 }
 .img-resize {
   height: 300px;
-  width: 300px;
+  /* width: 300px; */
 }
 img {
   padding-top: 10px;
@@ -55,5 +54,12 @@ img {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-style: italic;
   font-size: 1.2vw;
+}
+.v-lazy-image {
+  filter: blur(10px);
+  transition: filter 10s;
+}
+.v-lazy-image-loaded {
+  filter: blur(0);
 }
 </style>
